@@ -17,7 +17,7 @@ jobs:
       - run: yarn build
       - run: yarn test
       - run: |
-          curl -X POST "$ENDPOINT?format=shell" -H "Content-Type: application/json" -d '{"token":"'$CIRCLE_OIDC_TOKEN'"}' >> $BASH_ENV
+          curl -X POST "${ENDPOINT}/exchange?format=shell" -H "Content-Type: application/json" -d '{"token":"'$CIRCLE_OIDC_TOKEN'"}' >> $BASH_ENV
 
 workflows:
   version: 2
