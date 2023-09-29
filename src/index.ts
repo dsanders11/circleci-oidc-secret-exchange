@@ -51,7 +51,7 @@ export const configureAndListen = async (
 
     if (!validatedClaims || !secretProviders) {
       req.log.warn(
-        'Failed to validing incoming OIDC token, did not match any configured organization',
+        'Failed to validate incoming OIDC token, did not match any configured organization',
       );
       return reply.code(401).send();
     }
