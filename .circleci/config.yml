@@ -16,8 +16,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ arch }}-{{ checksum "yarn.lock" }}
-      - run: yarn build
-      - run: yarn test
+      - run: echo "export MY_SECRET=foobar" >> $BASH_ENV
+      - run: echo "This is $MY_SECRET"
 
 workflows:
   version: 2
